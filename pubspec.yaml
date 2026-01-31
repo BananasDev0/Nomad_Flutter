@@ -1,0 +1,49 @@
+name: trip_planner
+description: A Flutter trip planning application with MVVM architecture
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # State management - MVVM con Provider
+  provider: ^6.1.1
+  
+  # HTTP & API
+  dio: ^5.4.0
+  
+  # Dependency Injection
+  get_it: ^7.6.4
+  
+  # Code generation
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  
+  # Internationalization - CORREGIDO
+  intl: any  # Usa la versión que Flutter necesite
+  
+  # UI
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Code generation
+  build_runner: ^2.4.6
+  freezed: ^2.4.5
+  json_serializable: ^6.7.1
+  
+  # Linting
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
