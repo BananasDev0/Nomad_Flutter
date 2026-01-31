@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../viewmodels/home_viewmodel.dart';
 import 'trip_form_screen.dart';
+import 'user_screen.dart';
 import '../../core/di/injection.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -82,8 +83,11 @@ class HomeView extends StatelessWidget {
         GestureDetector(
           onTap: () {
             // Navegar a pantalla de usuario
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('User screen - próximamente')),
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const UserScreen(),
+              ),
             );
           },
           child: Container(
