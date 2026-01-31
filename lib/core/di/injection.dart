@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:trip_planner/presentation/viewmodels/home_viewmodel.dart';
 import '../network/api_client.dart';
 import '../../data/repositories/trip_repository_impl.dart';
 import '../../domain/repositories/trip_repository.dart';
@@ -25,6 +26,10 @@ void setupDependencies() {
   // ViewModels - Factory porque se crean nuevos cada vez
   getIt.registerFactory<TripFormViewModel>(
     () => TripFormViewModel(getIt<TripRepository>()),
+  );
+
+  getIt.registerFactory<HomeViewModel>(
+    () => HomeViewModel(getIt<TripRepository>())
   );
 }
 
