@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:trip_planner/presentation/viewmodels/home_viewmodel.dart';
+import 'package:trip_planner/presentation/viewmodels/itinerary_viewmodel.dart';
 import 'package:trip_planner/presentation/viewmodels/user_viewmodel.dart';
 import '../network/api_client.dart';
 import '../../data/repositories/trip_repository_impl.dart';
@@ -33,8 +34,12 @@ void setupDependencies() {
     () => HomeViewModel(getIt<TripRepository>())
   );
 
-    getIt.registerFactory<UserViewModel>(
+  getIt.registerFactory<UserViewModel>(
     () => UserViewModel(),
+  );
+
+  getIt.registerFactory<ItineraryViewModel>(
+    () => ItineraryViewModel(),
   );
 }
 

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../viewmodels/home_viewmodel.dart';
 import 'trip_form_screen.dart';
 import 'user_screen.dart';
+import 'itinerary_screen.dart';
 import '../../core/di/injection.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -305,8 +306,11 @@ class HomeView extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // Navegar a itinerario
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Itinerary screen - próximamente')),
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const ItineraryScreen(),
+          ),
         );
       },
       child: Container(
